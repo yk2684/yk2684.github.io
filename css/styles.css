@@ -1,37 +1,72 @@
 /* Custom Styles */
+	
+.scroll-icon a {
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	bottom: 45px;
+	padding: 0 10px;
+	color: white;
+	font-size: 1.5vw;
+	font-weight: 1;
+}
+
+.scroll-icon:hover a {
+	color: #04e762;	
+}
+
+.scroll-icon-up a {
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	top: 45px;
+	padding: 0 10px;
+	color: white;
+	font-size: 1.5vw;
+	font-weight: 1;
+}
+
+.scroll-icon-up:hover a {
+	color: #04e762;	
+}
+
 html {
 	font-family: 'Roboto Mono', monospace;
 }
 
 main {
 	display: flex;
+	flex-wrap: wrap;
 	flex-direction: column;
 	min-height: 100vh;
-	justify-content: center;
-	padding: 0 30px;
-	text-align: center;
+	justify-content: flex-start;
+	text-align: left;
 	background: #2e2f40;
 	color: #FAFAFA;
 }
 
+.vertical-scrolling {
+	padding: 0 12% 0 12%;
+}
+
 .intro h1{
 	display: inline-block;
-	font-size: 5.5vw;
+	font-size: calc(40px + (80 - 40) * ((100vw - 300px) / (2560 - 300)));
 	font-weight: 500;
 	overflow: hidden; /* Ensures the content is not revealed until the animation */
 	color: #04e762;
 	border-right: .2vw solid #04e762; /* The typwriter cursor */
 	white-space: nowrap; /* Keeps the content on a single line */
-	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+	margin: 40px auto; /* Gives that scrolling effect as the typing happens */
 	animation:
-		typing 3s steps(35, end),
+		typing 1s steps(13, end),
 		blink-caret .75s step-end infinite;
 }
 
   /* The typing effect */
   @keyframes typing {
 	from { width: 0% }
-	to { width: 63% }
+	to { width: 18% }
   }
   
   /* The typewriter cursor effect */
@@ -41,23 +76,136 @@ main {
   }
 
 .tagline h1 {
-	font-size: 2vw;
-	margin: 1.5vw 0;
-	font-weight: 400;
+	font-size: calc(25px + (50 - 25) * ((100vw - 300px) / (2560 - 300)));
 }
 
 .tagline p {
-	font-size: 1.5vw;
-	margin: 2vw 0;
-	font-weight: 400;
+	font-size: calc(10px + (35 - 10) * ((100vw - 300px) / (2560 - 300)));
+	margin: 2.5vw 0;
 }
 
 .icons-social a {
-	font-size: 2.5vw;
+	line-height: 3.5;
+	font-size: calc(20px + (45 - 20) * ((100vw - 300px) / (2560 - 300)));
 	padding: 10px;
 	color: #FAFAFA;
 }
 
 .icons-social a svg path{
 	fill: #FAFAFA;
+}
+
+@keyframes icons-social a {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+
+icons-social:hover {
+	animation: bounce 1s;
+}
+
+
+.flex-container {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.item1 {
+	flex-basis: 25%;
+  }
+
+.item2 {
+	flex-basis: 55%;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+  }
+
+.planguages {
+	flex-basis: calc(100%/3);
+}
+
+.ml {
+	flex-basis: calc(100%/3);
+}
+
+.tools {
+	flex-basis: calc(100%/3);
+}
+
+.company {
+	flex-basis: 67%;
+}
+
+.years {
+	flex-basis: 33%;
+	text-align: right
+}
+
+.item1 h1 {
+	letter-spacing: 3.5px;
+	font-size: calc(15px + (35 - 15) * ((100vw - 300px) / (2560 - 300)));
+	color: #04e762;
+	font-weight: 400;
+}
+
+.item2 p {
+	font-size: calc(13.5px + (15 - 13.5) * ((100vw - 300px) / (2560 - 300)));
+	font-weight: 100;
+	color: white;
+	line-height: 25px;
+}
+
+.underline {
+	position: relative;
+	display: inline-block;
+	transition: .3s;
+	text-decoration: none;
+}
+
+.underline::after {
+	position: absolute;
+	bottom: .3em;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background-color: white;
+	opacity: 0;
+	transition: .3s;
+}
+
+.underline:hover::after {
+	bottom: 0;
+	opacity: 1;
+}
+
+.sticky {
+	position: sticky;
+	bottom: 30px;
+}	
+
+.n
+
+.name {
+    position:relative;
+}
+.name p {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
 }
